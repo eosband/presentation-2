@@ -99,7 +99,7 @@ class ViewController: UIViewController {
                 return
             }
            
-            // This function (updateLabel) was called from the completion handler of our dataTask. Since the task is an asynchronous function, everything in here will be running asynchronously from the main thread. The GUI is displayed from the main thread, however, so in order to change something visual, we need to wrap it in this asynchronous 'function' that make sure it is executed in the main thread.
+            // This function (updateLabel) was called from the completion handler of our dataTask – an asynchronous function off of the main thread. Any UI operations need to be handled on the main thread, so to send it back we need the following DispatchQueue wrapper around our operation.
             DispatchQueue.main.async {
                 self.countryLabel.text = name
             }
