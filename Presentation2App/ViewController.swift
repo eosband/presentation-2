@@ -58,7 +58,6 @@ class ViewController: UIViewController {
                     print("error trying to convert data to JSON 1")
                     return
                 }
-                print("Done")
                 // now we have the todo
                 self.updateLabel(data: todo)
                 
