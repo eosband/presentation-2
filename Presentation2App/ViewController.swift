@@ -49,9 +49,7 @@ class ViewController: UIViewController {
                 print("Error: did not receive data")
                 return
             }
-            
-            print(responseData)
-            
+                        
             // parse the result as JSON, since that's what this API provides
             do {
                 guard let todo = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any] else {
